@@ -1,7 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { SyncStateService } from './sync-state.service';
 
+@ApiTags('Sync State')
 @Controller('sync-state')
 export class SyncStateController {
   constructor(private readonly syncStateService: SyncStateService) {}

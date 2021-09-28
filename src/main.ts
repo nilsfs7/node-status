@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Node Status')
     .setDescription('Node Status API documentation')
     .setVersion('1.0')
-    .addTag('ethereum')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
