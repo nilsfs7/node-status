@@ -1,12 +1,13 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import {
+  ApiBadGatewayResponse,
   ApiOkResponse,
   ApiOperation,
   ApiTags,
   ApiTooManyRequestsResponse,
 } from '@nestjs/swagger';
-import { RateLimit, RateLimiterGuard } from 'nestjs-rate-limiter';
-import { SyncStateService } from './sync-state.service';
+import { RateLimit } from 'nestjs-rate-limiter';
+import { SyncStateService } from '../../application/sync-state.service';
 
 @ApiTags('Sync State')
 @Controller('sync-state')
@@ -26,6 +27,7 @@ export class SyncStateController {
     description: 'Queries the current block number from an eth1 node.',
   })
   @ApiOkResponse({ description: 'State successfully returned.' })
+  @ApiBadGatewayResponse({ description: 'Bad gateway.' })
   @ApiTooManyRequestsResponse({ description: 'Too many requests.' })
   async getSyncState(): Promise<number> {
     return await this.syncStateService.getSyncState();
