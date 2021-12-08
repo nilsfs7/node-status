@@ -1,21 +1,39 @@
-FROM node:lts
+# Build stage
+FROM node:16.13.1 as build
 
-ENV WEB3_PROVIDER=http://localhost:8545
-
-# Create app directory
+## Create app directory
 WORKDIR /app
 
-# Install app dependencies
-COPY package*.json ./
-COPY tsconfig*.json ./
-
+## Install app dependencies
+COPY tsconfig*.json package*.json ./
 RUN npm ci --only=production
 
-# Bundle app source
+## Bundle app source
 COPY ./src ./src
 
-# Build app
+## Build app
 RUN npm run build
 
-EXPOSE 3000
+
+
+# Run stage
+FROM node:16.13.1
+
+## Switch to less privileged user
+USER node
+
+## Declare env vars
+ENV WEB3_PROVIDER=http://localhost:8545
+
+## Create app directory
+WORKDIR /app
+
+## Copy app
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+
+## Execute app
 CMD [ "node", "dist/main"]
+
+## Expose port
+EXPOSE 3000
