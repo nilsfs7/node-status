@@ -23,7 +23,8 @@ FROM node:16.13.1
 USER node
 
 ## Declare env vars
-ENV WEB3_PROVIDER=http://localhost:8545
+ENV ETH1_PROVIDER=http://localhost:8545
+ENV ETH2_PROVIDER=http://localhost:5052
 
 ## Create app directory
 WORKDIR /app

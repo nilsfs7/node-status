@@ -27,13 +27,14 @@
     "@nestjs/core": "^8.2.3",
     "@nestjs/platform-express": "^8.2.3",
     "@nestjs/swagger": "^5.1.5",
+    "axios": "^0.27.2",
     "dotenv": "^10.0.0",
     "nestjs-rate-limiter": "^3.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.4.0",
     "swagger-ui-express": "^4.2.0",
-    "web3": "^1.6.1"
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "@nestjs/schematics": "^8.0.5",
