@@ -4,11 +4,20 @@ import Web3 from 'web3';
 
 @Injectable()
 export class SyncStateService {
-  async getSyncStateEth1(): Promise<number> {
+  async getSyncStateEth1(): Promise<any> {
     try {
       const web3 = new Web3(process.env.ETH1_PROVIDER);
-      const blockNumber = await web3.eth.getBlockNumber();
-      return blockNumber;
+      const response = await web3.eth.isSyncing().then((result) => {
+        return result;
+      });
+
+      if (response === false) {
+        return {
+          data: 'Synced',
+        };
+      } else {
+        return response;
+      }
     } catch (error) {
       console.error(error);
       throw new BadGatewayException();
