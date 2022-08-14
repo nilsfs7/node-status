@@ -23,13 +23,13 @@ export class SyncStateController {
       'Sync state cannot be called more than once every 10 seconds.',
   })
   @ApiOperation({
-    summary: 'Queries the current block number.',
-    description: 'Queries the current block number from an eth1 node.',
+    summary: 'Queries the current sync state.',
+    description: 'Queries the current sync state from an eth1 node.',
   })
   @ApiOkResponse({ description: 'State successfully returned.' })
   @ApiBadGatewayResponse({ description: 'Bad gateway.' })
   @ApiTooManyRequestsResponse({ description: 'Too many requests.' })
-  async getSyncStateEth1(): Promise<number> {
+  async getSyncStateEth1(): Promise<any> {
     return this.syncStateService.getSyncStateEth1();
   }
 
@@ -42,8 +42,8 @@ export class SyncStateController {
       'Sync state cannot be called more than once every 10 seconds.',
   })
   @ApiOperation({
-    summary: 'Queries the current block number.',
-    description: 'Queries the current block number from an eth1 node.',
+    summary: 'Queries the current sync state.',
+    description: 'Queries the current sync state from an eth2 node.',
   })
   @ApiOkResponse({ description: 'State successfully returned.' })
   @ApiBadGatewayResponse({ description: 'Bad gateway.' })
