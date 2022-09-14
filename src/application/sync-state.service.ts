@@ -30,8 +30,8 @@ export class SyncStateService {
     });
 
     try {
-      const res = await instance.get('lighthouse/syncing');
-      return res.data;
+      const response = await instance.get('eth/v1/node/syncing');
+      return response.data;
     } catch (error) {
       console.error(error);
       throw new BadGatewayException();
