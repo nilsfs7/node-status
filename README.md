@@ -5,7 +5,7 @@ Shows status of your ethereum node.
 ## Prerequisites
 
 - ETH1 node
-- ETH2 node (Lighthouse)
+- ETH2 node
 
 ## Run
 
