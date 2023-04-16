@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   node-status:
-    image: node:16.13.1
+    image: node:18.16.0
     container_name: node-status
     working_dir: /app
     volumes:
