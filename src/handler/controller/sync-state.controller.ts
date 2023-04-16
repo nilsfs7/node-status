@@ -24,7 +24,7 @@ export class SyncStateController {
   })
   @ApiOperation({
     summary: 'Queries the current sync state.',
-    description: 'Queries the current sync state from an eth1 node.',
+    description: 'Queries the current sync state of an execution client.',
   })
   @ApiOkResponse({ description: 'State successfully returned.' })
   @ApiBadGatewayResponse({ description: 'Bad gateway.' })
@@ -43,7 +43,7 @@ export class SyncStateController {
   })
   @ApiOperation({
     summary: 'Queries the current sync state.',
-    description: 'Queries the current sync state from an eth2 node.',
+    description: 'Queries the current sync state of a beacon client.',
   })
   @ApiOkResponse({ description: 'State successfully returned.' })
   @ApiBadGatewayResponse({ description: 'Bad gateway.' })
