@@ -1,10 +1,12 @@
 # Build stage
-FROM node:18.16.0 as build
+FROM node:18.16.0 AS build
 
 ## Create app directory
 WORKDIR /app
 
 ## Install app dependencies
+RUN npm install -g husky
+
 COPY tsconfig*.json package*.json ./
 RUN npm ci --only=production
 
