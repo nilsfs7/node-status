@@ -20,7 +20,7 @@ npm i
 start app
 
 ```
-npm start
+npm run start:dev
 ```
 
 An OpenAPI documentation is available at `http://localhost:3000/api`.

@@ -7,7 +7,7 @@ import {
   ApiTooManyRequestsResponse,
 } from '@nestjs/swagger';
 import { RateLimit } from 'nestjs-rate-limiter';
-import { PeerStateService } from 'src/application/peer-state.service';
+import { PeerStateService } from '../../application/peer-state.service';
 
 @ApiTags('Peer State')
 @Controller('peer-state')
