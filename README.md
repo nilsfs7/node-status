@@ -30,25 +30,25 @@ An OpenAPI documentation is available at `http://localhost:3000/api`.
 pull image
 
 ```
-docker pull luisnaldo7/node-status:latest
+docker pull nilsfs7/node-status:latest
 ```
 
 or build image
 
 ```
-docker build -t luisnaldo7/node-status:latest .
+docker build -t nilsfs7/node-status:latest .
 ```
 
 execute container
 
 ```
-docker run -d -p 3000:3000 --rm --name node-status luisnaldo7/node-status:latest
+docker run -d -p 3000:3000 --rm --name node-status nilsfs7/node-status:latest
 ```
 
 execute container on boot
 
 ```
-docker run -d -p 3000:3000 --restart always --name node-status luisnaldo7/node-status:latest
+docker run -d -p 3000:3000 --restart always --name node-status nilsfs7/node-status:latest
 ```
 
 ## Run in Docker-Compose
