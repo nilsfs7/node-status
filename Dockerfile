@@ -1,5 +1,5 @@
 # Build stage
-FROM node:24.18.0 AS build
+FROM node:26.13.1 AS build
 
 ## Create app directory
 WORKDIR /app
@@ -18,7 +18,7 @@ RUN npm run build && npm prune --omit=dev
 
 
 # Run stage
-FROM node:24.18.0
+FROM node:26.13.1
 
 ## Switch to less privileged user
 USER node
