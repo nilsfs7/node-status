@@ -28,8 +28,7 @@
     "@nestjs/core": "^11.1.28",
     "@nestjs/platform-express": "^11.1.28",
     "@nestjs/swagger": "^11.4.6",
-    "axios": "^1.18.1",
-    "dotenv": "^17.4.2",
+    "axios": "^1.21.1",
     "format": "^0.2.2",
     "nestjs-rate-limiter": "^3.1.0",
     "reflect-metadata": "^0.2.2",
@@ -76,7 +75,10 @@
         "ts-jest",
         {
           "tsconfig": {
-            "types": ["node", "jest"]
+            "types": [
+              "node",
+              "jest"
+            ]
           }
         }
       ]
